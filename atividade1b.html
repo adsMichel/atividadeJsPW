@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1a</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Atividade 1b</h1>
+
+    <div class="form-box">
+        <label for="id_nota1">Nota 1: </label>
+        <input type="text" id="id_nota1" placeholder="Digite sua nota">
+        <label for="id_nota2">Nota 2: </label>
+        <input type="text" id="id_nota2">
+        <input type="button" value="Calcular Média" onclick="calcular_media()">
+    </div>
+
+    <div class="background">
+        <p>Sua média é: <span id="id_media"></span> e você está <span id="id_situacao"></span></p>
+    </div>
+
+    <script>
+        
+        function calcular_media() {
+            let nota1 = parseFloat(document.getElementById('id_nota1').value);
+            let nota2 = parseFloat(document.getElementById('id_nota2').value);
+            let media = (nota1 + nota2) / 2;
+            
+            if (media >= 6) {
+                document.getElementById("id_media").innerHTML = media;
+                document.getElementById("id_situacao").style.color = "blue";
+                document.getElementById('id_situacao').innerHTML = 'APROVADO';
+            } else {
+                document.getElementById("id_media").innerHTML = media;
+                document.getElementById("id_situacao").style.color = "red";
+                document.getElementById('id_situacao').innerHTML = 'REPROVADO';
+            }
+        }
+
+    </script>
+</body>
+</html>
