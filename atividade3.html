@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Atividade 3 - Cálculo de IMC</h1>
+    <form class="formulario">
+
+        <div class="list-box">
+            <label for="id_item">Item:</label>
+            <input type="text" id="id_item" class="txt_input">
+            <input class="list-btn" type="button" value="Add" onclick="incluirItem()" id="btn-item">
+            <form class="cores" id="id_cores">
+                <span>
+                    <input type="radio" value="cor_azul" name="cor">
+                    <label for="cor_azul">Azul</label>
+                </span>
+                <span>
+                    <input type="radio" value="cor_verde" name="cor">
+                    <label for="cor_verde">Verde</label>
+                </span>
+                <span>
+                    <input type="radio" value="cor_rosa" name="cor">
+                    <label for="cor_rosa">Rosa</label>
+                </span>
+            </form>
+            <ol id="minhalista">
+            </ol>
+        </div>
+    </form>
+
+    <script>
+        
+        function incluirItem() {
+            const item = document.getElementById('id_item').value;
+            const itemli = document.createElement("li");
+            const conteudoItem = document.createTextNode(item);
+            itemli.appendChild(conteudoItem);
+
+            let juju = document.querySelector('input[name="cor"]:checked').value;
+            
+            if (juju == 'cor_azul') {
+                document.getElementById("minhalista").appendChild(itemli).style.color = "blue";
+            } else if ((juju == 'cor_verde')) {
+                document.getElementById("minhalista").appendChild(itemli).style.color = "green";
+            } else {
+                document.getElementById("minhalista").appendChild(itemli).style.color = "pink";
+            }
+        }
+    </script>
+</body>
+</html>

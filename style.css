@@ -10,6 +10,53 @@ body {
     height: 100vh;
 }
 
+.list-box {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    color: #fff;
+}
+
+.cores {
+    display: flex;
+    justify-content: space-evenly;
+}
+.item-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list-box label {
+    color: #fff;
+    padding-left: 4px;
+}
+
+.txt_input {
+    width: 200px;
+    padding: 4px 8px;
+    margin: 2px 30px 8px 0;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+.list-btn {
+    background-color: bisque;
+    padding: 4px 8px;
+    margin: 2px 0 8px 0;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
 .form-box {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
