@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 1a</title>
+    <title>Atividade 2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
 
     <div class="form-box">
         <label for="id_peso">Peso: </label>
-        <input type="text" id="id_peso" placeholder="Digite seu peso">
+        <input type="text" id="id_peso" placeholder="85">
         <label for="id_altura">Altura: </label>
         <input type="text" id="id_altura" placeholder="ex: 1.65">
         <input type="button" value="IMC" onclick="calcular_imc()">
@@ -26,13 +26,13 @@
         function calcular_imc() {
             let peso = parseFloat(document.getElementById('id_peso').value);
             let altura = parseFloat(document.getElementById('id_altura').value);
-            let media = (peso + altura);
-            let mediaf = (media.toFixed(2));
+            let imc = (peso / (altura * altura));
+            let pesoFormat = (imc.toFixed(2));
             
-            if (media >= 18.5 && media < 25) {
+            if (imc >= 18.5 && imc < 25) {
                 document.getElementById("situacaoPeso").style.color = "green";
                 document.getElementById("situacaoPeso").innerHTML = 'PESO NORMAL';
-            } else if ((media < 18.5 && media >= 17) || (media >= 25 && media < 30)) {
+            } else if ((imc < 18.5 && imc >= 17) || (imc >= 25 && imc < 30)) {
                 document.getElementById("situacaoPeso").style.color = "orange";
                 document.getElementById("situacaoPeso").innerHTML = 'ACIMA OU ABAIXO DO PESO';
             } else {
