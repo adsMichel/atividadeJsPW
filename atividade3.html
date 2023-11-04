@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Atividade 3 - Cálculo de IMC</h1>
-    <form class="formulario">
+    <header>
+        <h1>Atividade 3 - CreateElement</h1>
+    </header>
+    <main>
+        <form class="formulario">
 
-        <div class="list-box">
-            <label for="id_item">Item:</label>
-            <input type="text" id="id_item" class="txt_input">
-            <input class="list-btn" type="button" value="Add" onclick="incluirItem()" id="btn-item">
-            <form class="cores" id="id_cores">
-                <span>
-                    <input type="radio" value="cor_azul" name="cor">
+            <div class="list-box">
+                <div class="item-input">
+                    <label for="id_item">Item:</label>
+                    <input type="text" id="id_item" class="txt_input">
+                    <input class="list-btn" type="button" value="Add" onclick="incluirItem()" id="btn-item">
+                </div>
+                <div class="radio">
+                    <span>
+                        <input type="radio" value="cor_azul" name="cor">
                     <label for="cor_azul">Azul</label>
                 </span>
                 <span>
@@ -27,12 +32,13 @@
                     <input type="radio" value="cor_rosa" name="cor">
                     <label for="cor_rosa">Rosa</label>
                 </span>
-            </form>
+            </div>
             <ol id="minhalista">
             </ol>
         </div>
     </form>
-
+</main>
+    
     <script>
         
         function incluirItem() {

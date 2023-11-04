@@ -20,10 +20,6 @@
             <input type="text" id="id_altura">
             <input type="button" value="IMC" onclick="calcular_imc()">
         </form>
-        
-        <div class="background">
-            <p id="frase"><span id="situacaoPeso"></span></p>
-        </div>
     </main>
         
     <script>
@@ -33,22 +29,21 @@
             let altura = parseFloat(document.getElementById('id_altura').value);
             let imc = (peso / (altura * altura));
             let pesoFormat = (imc.toFixed(2));
-
             
+            const itemli = document.createElement("p");            
             
             if (imc >= 18.5 && imc < 25) {
-                document.getElementById("situacaoPeso").style.color = "green";
-                document.getElementById("situacaoPeso").innerHTML = 'PESO NORMAL';
-            } else if ((imc < 18.5 && imc >= 17) || (imc >= 25 && imc < 30)) {
-                document.getElementById("situacaoPeso").style.color = "orange";
-                document.getElementById("situacaoPeso").innerHTML = 'ACIMA OU ABAIXO DO PESO';
-            } else {
-                /* const itemli = document.createElement("p");
-                const conteudoItem = document.createTextNode('MUITO ACIMA OU ABAIXO DO PESO');
+                const conteudoItem = document.createTextNode(`Peso normal com IMC de ${pesoFormat}.`);
                 itemli.appendChild(conteudoItem);
-                document.getElementById("id_form").appendChild(itemli).style.color = "red"; */
-                document.getElementById("situacaoPeso").style.color = "red";
-                document.getElementById("situacaoPeso").innerHTML = 'MUITO ACIMA OU ABAIXO DO PESO';
+                document.getElementById("id_form").appendChild(itemli).style.color = "green";
+            } else if ((imc < 18.5 && imc >= 17) || (imc >= 25 && imc < 30)) {
+                const conteudoItem = document.createTextNode(`Acima ou abaixo do peso com IMC de ${pesoFormat}.`);
+                itemli.appendChild(conteudoItem);
+                document.getElementById("id_form").appendChild(itemli).style.color = "orange";
+            } else {
+                const conteudoItem = document.createTextNode(`Muito acima ou abaixo do peso com IMC de ${pesoFormat}.`);
+                itemli.appendChild(conteudoItem);
+                document.getElementById("id_form").appendChild(itemli).style.color = "red";
             }
         }
 
