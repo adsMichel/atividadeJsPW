@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Atividade 1b</h1>
+    <header>
 
-    <div class="form-box">
-        <label for="id_nota1">Nota 1: </label>
-        <input type="text" id="id_nota1" placeholder="7.5">
-        <label for="id_nota2">Nota 2: </label>
-        <input type="text" id="id_nota2" placeholder="8.2">
-        <input type="button" value="Calcular Média" onclick="calcular_media()">
-    </div>
+        <h1>Atividade 1b</h1>
+    </header>
 
-    <div class="background">
-        <p>Sua média é: <span id="id_media"></span> e você está <span id="id_situacao"></span></p>
-    </div>
+    <main>
+
+        <div class="form-box" id="id_background">
+            <label for="id_nota1">Nota 1: </label>
+            <input type="text" id="id_nota1">
+            <label for="id_nota2">Nota 2: </label>
+            <input type="text" id="id_nota2">
+            <input type="button" value="Calcular Média" onclick="calcular_media()">
+        </div>
+        
+    </main>
 
     <script>
         
@@ -27,15 +30,24 @@
             let nota1 = parseFloat(document.getElementById('id_nota1').value);
             let nota2 = parseFloat(document.getElementById('id_nota2').value);
             let media = (nota1 + nota2) / 2;
+
+            let elemento = document.createElement('p');
+            let elementoM = document.createElement('p');
             
             if (media >= 6) {
-                document.getElementById("id_media").innerHTML = media;
-                document.getElementById("id_situacao").style.color = "blue";
-                document.getElementById('id_situacao').innerHTML = 'APROVADO';
+                let txtElemento = document.createTextNode('APROVADO');
+                let txtElementoMedia = document.createTextNode(`Média: ${media}`);
+                elemento.appendChild(txtElemento);
+                elementoM.appendChild(txtElementoMedia);
+                document.getElementById('id_background').appendChild(elemento).style.color = 'blue';
+                document.getElementById('id_background').appendChild(elementoM);
             } else {
-                document.getElementById("id_media").innerHTML = media;
-                document.getElementById("id_situacao").style.color = "red";
-                document.getElementById('id_situacao').innerHTML = 'REPROVADO';
+                let txtElemento = document.createTextNode('REPROVADO');
+                let txtElementoMedia = document.createTextNode(`Média: ${media}`);
+                elemento.appendChild(txtElemento);
+                elementoM.appendChild(txtElementoMedia);
+                document.getElementById('id_background').appendChild(elemento).style.color = 'red';
+                document.getElementById('id_background').appendChild(elementoM);
             }
         }
 

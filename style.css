@@ -80,6 +80,10 @@ main {
     font-size: 1rem;
 }
 
+.form-box p {
+    text-align: center;
+}
+
 .background {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
