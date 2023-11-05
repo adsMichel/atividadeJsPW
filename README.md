@@ -3,3 +3,5 @@ Atividade de Padrões Web que cria uma página com 4 hiperlinks que levam a pág
 
 Participantes:
 Michel Naoki Silva Kuriyama
+Adriana Barbosa Silva
+Tuany Rodrigues
