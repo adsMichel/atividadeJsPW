@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 1b</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
 
-        <h1>Atividade 1b</h1>
+        <h1 class="animate__animated animate__bounce">Atividade 1b</h1>
     </header>
 
     <main>
@@ -20,6 +21,7 @@
             <label for="id_nota2">Nota 2: </label>
             <input type="text" id="id_nota2">
             <input type="button" value="Calcular Média" onclick="calcular_media()">
+            <span id="id_resultado"></span>
         </div>
         
     </main>
@@ -30,24 +32,16 @@
             let nota1 = parseFloat(document.getElementById('id_nota1').value);
             let nota2 = parseFloat(document.getElementById('id_nota2').value);
             let media = (nota1 + nota2) / 2;
+            let resultado = '';
 
-            let elemento = document.createElement('p');
-            let elementoM = document.createElement('p');
-            
             if (media >= 6) {
-                let txtElemento = document.createTextNode('APROVADO');
-                let txtElementoMedia = document.createTextNode(`Média: ${media}`);
-                elemento.appendChild(txtElemento);
-                elementoM.appendChild(txtElementoMedia);
-                document.getElementById('id_background').appendChild(elemento).style.color = 'blue';
-                document.getElementById('id_background').appendChild(elementoM);
+                resultado = 'APROVADO';
+                document.getElementById('id_resultado').innerHTML = resultado;
+                document.getElementById('id_resultado').style.color = 'blue';
             } else {
-                let txtElemento = document.createTextNode('REPROVADO');
-                let txtElementoMedia = document.createTextNode(`Média: ${media}`);
-                elemento.appendChild(txtElemento);
-                elementoM.appendChild(txtElementoMedia);
-                document.getElementById('id_background').appendChild(elemento).style.color = 'red';
-                document.getElementById('id_background').appendChild(elementoM);
+                resultado = 'REPROVADO';
+                document.getElementById('id_resultado').innerHTML = resultado;
+                document.getElementById('id_resultado').style.color = 'red';
             }
         }
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="animate__animated animate__bounce">Atividade 3 - CreateElement</h1>
+    </header>
+    <main>
+        <form class="formulario">
+
+            <div class="list-box">
+                <div class="item-input" id="my-div">
+                    <label for="id_item">Item:</label>
+                    <input type="text" id="myInput">
+                    <input class="list-btn" type="button" value="Add" onclick="newElement()" id="btn-item">
+                </div>
+                <!--                 <div class="radio">
+                    <span>
+                        <input type="radio" value="cor_azul" name="cor">
+                    <label for="cor_azul">Azul</label>
+                </span>
+                <span>
+                    <input type="radio" value="cor_verde" name="cor">
+                    <label for="cor_verde">Verde</label>
+                </span>
+                <span>
+                    <input type="radio" value="cor_rosa" name="cor">
+                    <label for="cor_rosa">Rosa</label>
+                </span>
+            </div> -->
+                <ul id="myUL">
+                </ul>
+            </div>
+        </form>
+    </main>
+    <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function (ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
