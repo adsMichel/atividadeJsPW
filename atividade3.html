@@ -50,12 +50,16 @@
 
             let juju = document.querySelector('input[name="cor"]:checked').value;
             
-            if (juju == 'cor_azul') {
-                document.getElementById("minhalista").appendChild(itemli).style.color = "blue";
-            } else if ((juju == 'cor_verde')) {
-                document.getElementById("minhalista").appendChild(itemli).style.color = "green";
+            if (item == '') {
+                alert("Você deve escrever algo!");
             } else {
-                document.getElementById("minhalista").appendChild(itemli).style.color = "pink";
+                if (juju == 'cor_azul') {
+                    document.getElementById("minhalista").appendChild(itemli).style.color = "blue";
+                } else if ((juju == 'cor_verde')) {
+                    document.getElementById("minhalista").appendChild(itemli).style.color = "green";
+                } else {
+                    document.getElementById("minhalista").appendChild(itemli).style.color = "pink";
+                }
             }
         }
     </script>
