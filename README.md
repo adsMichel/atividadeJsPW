@@ -6,3 +6,4 @@ Participantes:
 - Adriana Barbosa Silva
 - Tuany Macedo Rodrigues
 - Lucas Junio Pereira Lima
+- Kevin Souza Magalhaes
