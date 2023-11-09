@@ -5,3 +5,4 @@ Participantes:
 - Michel Naoki Silva Kuriyama
 - Adriana Barbosa Silva
 - Tuany Macedo Rodrigues
+- Lucas Junio Pereira Lima
